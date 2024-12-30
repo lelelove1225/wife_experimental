@@ -1,5 +1,5 @@
 from pydantic_ai import Agent
-from prompts import reona_json
+from prompts import hikari_json
 
 from pydantic import BaseModel, Field
 
@@ -12,7 +12,7 @@ class Result(BaseModel):
 agent = Agent(
     "ollama:qwen2.5:32b",
     result_type=Result,
-    system_prompt=reona_json.character_description,
+    system_prompt=hikari_json.character_description,
 )
 
 result = agent.run_sync("こんにちは")
